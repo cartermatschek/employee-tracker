@@ -12,10 +12,9 @@ CREATE TABLE role (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL,
-    department_id INT NOT NULL AUTO_INCREMENT,
-    FOREIGN KEY (department)
+    department_id INT NOT NULL,
+    FOREIGN KEY (department_id)
     REFERENCES department(id)
-    -- ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
@@ -23,10 +22,9 @@ CREATE TABLE employee (
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INT NOT NULL,
+    FOREIGN KEY (role_id)
+    REFERENCES role(id),
     manager_id INT,
-    FOREIGN KEY (role)
-    REFERENCES role(id)
-    -- ON DELETE SET NULL
+    FOREIGN KEY (manager_id)
+    REFERENCES employee(id)
 );
-
--- TO DO - link manager_id to id in last employee table and check that links are correct

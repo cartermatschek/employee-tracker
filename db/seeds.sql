@@ -17,7 +17,5 @@ VALUES
 ('Chris', 'Yee', 2, 1),
 ('Cheryl', 'Kleffner', 3, 1),
 ('Camille', 'Garcia', 3, 1),
-('Ramon', 'Martinez', 4, 1),
-
--- What to input for ids?
+('Ramon', 'Martinez', 4, 1);
 
