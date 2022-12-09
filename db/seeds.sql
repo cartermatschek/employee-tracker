@@ -18,4 +18,3 @@ VALUES
 ('Cheryl', 'Kleffner', 3, 1),
 ('Camille', 'Garcia', 3, 1),
 ('Ramon', 'Martinez', 4, 1);
-

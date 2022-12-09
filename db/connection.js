@@ -6,10 +6,16 @@ const db = mysql.createConnection(
     {
       host: 'localhost',
       user: 'root',
-      password: process.env.DB_PASSWORD,
-      database: 'employee_db'
+      port: 3306,
+      password: 'Beltre!1986',
+      database: 'employees_db'
     },
-    console.log(`Connected to the employee_db database.`)
+    console.log(`Connected to the employees_db database.`)
   );
+
+  db.connect(function(err) {
+    if (err) throw err
+    console.log('database connected');
+})
 
   module.exports = db;
