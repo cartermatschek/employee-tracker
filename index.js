@@ -163,7 +163,6 @@ db.query("SELECT * FROM role", function (err, res) {
         message: "Select a role for this employee",
         choices: res.map(role => role.title)
       },
-
       {
         name: "managerId",
         type: "list",
@@ -189,7 +188,36 @@ db.query("SELECT * FROM role", function (err, res) {
   });
 }
 // Update employee role
-
+function UpdateEmployeeRole() {
+    db.query("SELECT * FROM employee", function (err, res) {
+        if (err) throw err;     
+        inquirer.prompt([
+          {
+            name: "title",
+            type: "list",
+            message: "Which employee do you want to update?",
+            choices: res.map(employee => employee.first_name + " " + employee.last_name)
+          },
+        ]).then(function (answers) {
+          const employee = res.find(employee => employee.first_name + " " + employee.last_name === answers.title);
+          db.query("SELECT * FROM role", function (err, res){
+            if (err) throw err;     
+            inquirer.prompt([
+          {
+            name: "role",
+            type: "list",
+            message: "What role do want this employee to have?",
+            choices: res.map(role => role.title)
+          },
+           ]).then(function (answers) {
+            const role = res.find(role => role.title === answers.role);
+            db.query("UPDATE employee SET role_id = ? WHERE id = ?", [role.id, employee.id])
+        init()
+           });
+         });
+        });
+      })
+    };
 // Quit
 function quit() {
     process.exit();
