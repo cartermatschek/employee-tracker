@@ -1,7 +1,8 @@
 # Employee Tracker
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
-  An Employee Tracker that uses inquirer to connect to a MySQL database. It allows for tracking employees, departments, roles, and salaries.
+  An Employee Tracker that uses inquirer to connect to a MySQL database. It allows for tracking employees, departments, roles, and salaries.  
+  Video Demo Link: https://app.castify.com/view/e8a9b27c-6679-4322-be92-94e56d936b32
   ## Table of Contents
   1. [Description](#description)
   2. [Installation](#installation)
